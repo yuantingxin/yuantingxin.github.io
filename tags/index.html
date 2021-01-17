@@ -10,7 +10,7 @@
   
   <title>
     
-      Hexo
+      Tags | Hexo
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -153,45 +153,42 @@
 </header>
 
     <div id="article-banner">
-  <h2>Archives</h2>
-  <p class="post-date">文章归档</p>
+  <h2>Tags</h2>
+  <p class="post-date">标签检索</p>
 </div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2021
-  </h1>
-  <div class="section-list">
+<main class="app-body">
+  <div id="tag-cloud">
     
-    
-      <div class="section-list-item">
-        <a href="/2021/01/16/Test2/" class="archive-title">Test2</a>
-        <p class="archive-date">01-16</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/01/16/Test1/" class="archive-title">Test1</a>
-        <p class="archive-date">01-16</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2021/01/16/hello-world/" class="archive-title">Hello World</a>
-        <p class="archive-date">01-16</p>
-      </div>
+      <a class="tag1" data-name="tag-心理学">心理学</a>
     
   </div>
-</section>
   
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-心理学">心理学</h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/2021/01/16/Test1/">Test1</a>
+          </li>
+        </ul>
+        
+    </div>
+    
 </main>
 
 <script>
   (function () {
-    var url = 'http://example.com/archives/2021/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    var url = 'http://example.com/tags/index.html'
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
+
+    var tag = location.hash.replace('#', '')
+    if (tag) {
+      var tagId = "#tag-" + tag;
+      $("html, body").animate({
+        scrollTop: $(tagId).offset().top 
+      }, 400)
+    }
   })();
 </script>
     <div class="scroll-top">
